@@ -4,6 +4,7 @@ Se realiza primer scaneo con nmap:
 
 - nmap -sC -sV ip
 
+```diff
 └─$ nmap -sC -sV 10.129.143.219     
 Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-01 18:20 -0500
 Nmap scan report for nexus.htb (10.129.143.219)
@@ -18,9 +19,9 @@ PORT   STATE SERVICE VERSION
 |_http-title: Nexus Energy Authority \xE2\x80\x94 Powering the Nation's Future
 |_http-server-header: nginx/1.24.0 (Ubuntu)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 13.10 seconds
+```
 
 Donde se comprende que:
 
@@ -32,7 +33,7 @@ Donde se comprende que:
 
 ### Entonces:
 
-Se busca en la web y nos da un dominio http://nexus.htb/, tratando de recuperar información importante encontramos que el correo de un personal es: j.matthew@nexus.htb.
+Se busca en la web y nos da un dominio http://nexus.htb/, tratando de recuperar información importante encontramos que el correo de un personal es: j.matthew@nexus.htb
 
 Ahora se utilizan sistemas de escaneo para ver subdominios, rutas conocidas, y ver que tipo de información podemos extraer.
 
@@ -55,6 +56,7 @@ Si descargamos ese git, y empezamos a analizarlo, damos con el resultado de un c
 
 Captura 4
 
+```diff
 ┌──(kali㉿kali)-[~/pentest/machines/krayin-docker-setup]
 └─$ sudo git diff 9b817fa 1615c46
 diff --git a/.env b/.env
@@ -79,6 +81,7 @@ index 5ae1bb2..cb7ccc3 100644
  DB_PREFIX=
  BROADCAST_DRIVER=log
  CACHE_DRIVER=file
+```
 
 Probando estas credencianles en billing, logramos ingresar al panel.
 
@@ -88,4 +91,39 @@ Con estos datos nos damos cuenta que el servicio http, podria aceptar quizas ext
 
 Captura 6
 
-No funciono como esperabamos.
+- https://github.com/duohnson/php-reverse-shell
+
+Captura 7
+```diff
+Authenticated Remote Code Execution (RCE) [CVE-2026-38526]: A critical flaw (CVSS 9.9) in the TinyMCE media upload endpoint allows any authenticated user to upload and execute arbitrary PHP files. 
+Pre-Authentication Admin Account Takeover [CVE-2026-41452]: A critical missing-authentication vulnerability (CVSS 9.8) allows unauthenticated attackers to overwrite the primary administrator account credentials. 
+SQL Injection [CVE-2026-38528]: A SQL injection vulnerability exists via the rotten_lead parameter in the Lead Data Grid. 
+Broken Object-Level Authorization [CVE-2026-38529]: A high-severity flaw allows authenticated attackers to reset other users' passwords and perform account takeovers. 
+Cross-Site Scripting (XSS) [CVE-2026-5370]: A low-severity XSS vulnerability affects the Activities and Notes modules.
+```
+
+Captura 8
+GUARDAR COMO .PNG O .JPG
+
+- nc -lvnp 1234
+
+- Abrir Burp Suite CE.
+
+- Capturar la salida del .php.png
+
+Captura 9
+Captura 10
+Captura 11
+
+En resumen, se modifica un .php con reverse shell el cual descargo, luego se modifica y se coloca la ip y el puerto que usare, luego le coloco .png al final, y lo cargo con el burp suite activo, hay que cambiar la extension en el burp suite por .php, y luego forward.
+
+De esa forma el listen que iniciamos con el nc -lvnp 1234 nos da acceso y con bash -i, tenemos la shell.
+
+- script /dev/null -c /bin/bash
+
+Para intentar tener obtener shell interactiva, donde script inicia sesion luego con dev null le dice que envie salidas descartadas, y -c bin bash ejecuta el bash dentro de esa sesion.
+Y puede convertir una shell no interactiva/limitada en una shell con características de terminal más normales.
+
+Captura 11
+
+Pendiente de terminar.

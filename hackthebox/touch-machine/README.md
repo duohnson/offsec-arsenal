@@ -6,6 +6,7 @@ Se realiza primer scaneo con nmap:
 
 Se identifican: 
 
+```diff
 PORT     STATE SERVICE       VERSION
 135/tcp  open  msrpc         Microsoft Windows RPC
 3389/tcp open  ms-wbt-server Microsoft Terminal Service
@@ -19,6 +20,7 @@ PORT     STATE SERVICE       VERSION
 |_http-trane-info: Problem with XML parsing of /evox/about
 |_http-server-header: Microsoft-HTTPAPI/2.0
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+```
 
 Donde se comprende que:
 
