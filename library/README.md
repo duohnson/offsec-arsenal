@@ -1,0 +1,3 @@
+## CREDITS AND REFERENCE FROM WHERE THEY ARE OBTAINED, ADDED TO MORE BOOKS
+
+[Telegram Group OSCP+ Exam Resources](https://web.telegram.org/a/#-1001872033404)

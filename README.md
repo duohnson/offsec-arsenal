@@ -1,10 +1,10 @@
 ## This repository is a collection of files and resources. Most of the content is in Spanish, but you will also find resources in English.
 
-Basically, this is where I keep my machines, Sherlocks, notes, exploits, payloads, reports, information, and pretty much everything else I use throughout my journey of learning ethical hacking and developing my skills as a cybersecurity and penetration testing enthusiast.
+Basically, this is where i keep my machines, Sherlocks, notes, exploits, payloads, reports, information, and pretty much everything else i use throughout my journey of learning ethical hacking and developing my skills as a cybersecurity and penetration testing enthusiast.
 
-I am not an expert, and I am not trying to be one. I am simply an enthusiast who enjoys learning, experimenting, and understanding how things work.
+I am not an expert, and i am not trying to be one. I am simply an enthusiast who enjoys learning, experimenting, and understanding how things work.
 
-I am not here to compete with anyone or to be the best. I am just doing what I enjoy.
+I am not here to compete with anyone or to be the best. I am just doing what i enjoy.
 
 Everything you will find in this repository reflects my ongoing pursuit of knowledge, always within an ethical and responsible context.
 

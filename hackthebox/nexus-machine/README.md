@@ -39,22 +39,22 @@ Ahora se utilizan sistemas de escaneo para ver subdominios, rutas conocidas, y v
 
 Feroxbuster y Gobuster no arrojan ningun resultado util o usable.
 
-Captura 1
+![capture1.png](./captures/capture1.png)
 
 Con FFUF si rastreamos subdominios, los cuales son git y billing.
 
-Captura 2
+![capture2.png](./captures/capture2.png)
 
 Ingresamos a ambos.
 En el billing hay un panel web con inicio de sesión.
 
 Pero lo interesante viene realmente cuando abro el git.nexus.htb, que me aparece un git con exposicion de datos, pero aun sin credenciales.
 
-Captura 3
+![capture3.png](./captures/capture3.png)
 
 Si descargamos ese git, y empezamos a analizarlo, damos con el resultado de un commit realizado, con el cual intentan borrar credenciales expuestas, sin embargo, ya se encontraba en un commit anterior que logramos recuperar.
 
-Captura 4
+![capture4.png](./captures/capture4.png)
 
 ```diff
 ┌──(kali㉿kali)-[~/pentest/machines/krayin-docker-setup]
@@ -85,15 +85,13 @@ index 5ae1bb2..cb7ccc3 100644
 
 Probando estas credencianles en billing, logramos ingresar al panel.
 
-Captura 5
+![capture5.png](./captures/capture5.png)
 
 Con estos datos nos damos cuenta que el servicio http, podria aceptar quizas extensiones php, intentaremos ver si en My Account, permite subir un archivo que no sea imagen.
 
-Captura 6
-
 - https://github.com/duohnson/php-reverse-shell
 
-Captura 7
+![capture7.png](./captures/capture7.png)
 ```diff
 Authenticated Remote Code Execution (RCE) [CVE-2026-38526]: A critical flaw (CVSS 9.9) in the TinyMCE media upload endpoint allows any authenticated user to upload and execute arbitrary PHP files. 
 Pre-Authentication Admin Account Takeover [CVE-2026-41452]: A critical missing-authentication vulnerability (CVSS 9.8) allows unauthenticated attackers to overwrite the primary administrator account credentials. 
@@ -102,7 +100,7 @@ Broken Object-Level Authorization [CVE-2026-38529]: A high-severity flaw allows 
 Cross-Site Scripting (XSS) [CVE-2026-5370]: A low-severity XSS vulnerability affects the Activities and Notes modules.
 ```
 
-Captura 8
+![capture8.png](./captures/capture8.png)
 GUARDAR COMO .PNG O .JPG
 
 - nc -lvnp 1234
@@ -111,9 +109,9 @@ GUARDAR COMO .PNG O .JPG
 
 - Capturar la salida del .php.png
 
-Captura 9
-Captura 10
-Captura 11
+![capture9.png](./captures/capture9.png)
+![capture10.png](./captures/capture10.png)
+![capture11.png](./captures/capture11.png)
 
 En resumen, se modifica un .php con reverse shell el cual descargo, luego se modifica y se coloca la ip y el puerto que usare, luego le coloco .png al final, y lo cargo con el burp suite activo, hay que cambiar la extension en el burp suite por .php, y luego forward.
 
@@ -124,6 +122,9 @@ De esa forma el listen que iniciamos con el nc -lvnp 1234 nos da acceso y con ba
 Para intentar tener obtener shell interactiva, donde script inicia sesion luego con dev null le dice que envie salidas descartadas, y -c bin bash ejecuta el bash dentro de esa sesion.
 Y puede convertir una shell no interactiva/limitada en una shell con características de terminal más normales.
 
-Captura 11
+![capture12.png](./captures/capture12.png)
 
 Pendiente de terminar.
+
+Me pusieron la maquina en VIP, y no pude continuarla.... luego la terminaré...
+Considero esto muy injusto, hay una decena de maquinas VIP, y justo la que yo estaba haciendo, me la cambiaron, es complicado..
