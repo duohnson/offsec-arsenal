@@ -14,13 +14,17 @@ Detailed write-ups and technical documentation are published only when the platf
 
 #### You can also contact me if you want to see what I can do.
 
-### Hack The Box
+### Hack The Box - Machines
 
-| Machine | Status |
-|---|---|
-| Cohort | Completed |
-| DutyBound | Completed |
-| Management | Completed |
-| Touch | Completed |
-| TwoMillion | Completed |
+| Machine | Status | Operating System | Vulnerabilities / Techniques |
+|---|---|---|---|
+| Cap | Completed | Linux | IDOR, Information Disclosure, Password Reuse, Linux Capabilities Abuse |
+| Odori | Completed | Windows | BitLocker Cracking, Credential Dumping, SFTP Restriction Bypass, SUID Abuse |
+| Cohort | Completed | Linux | SSRF, Authentication Bypass, Remote Code Execution (RCE), TOCTOU |
+| DutyBound | Completed | Linux | SQL Injection, Command Execution, X11 Session Hijacking, systemd Privilege Escalation |
+| Management | Completed | Linux | Pre-Authentication RCE, Java Deserialization, Information Disclosure, Sudo Misconfiguration |
+| Touch | Completed | Windows | Information Disclosure, Default Credentials, Kiosk Escape, MySQL UDF Abuse |
+| TwoMillion | Completed | Linux | Broken Access Control, API Enumeration, JWT Manipulation, Command Injection, Kernel Exploitation |
+| Unclaimed | Completed | Windows | Prompt Injection, SQL Injection, Command Execution, Credential Extraction, Privilege Escalation |
 
+![Capture](./capture.png)
