@@ -28,3 +28,12 @@ Detailed write-ups and technical documentation are published only when the platf
 | Unclaimed | Completed | Windows | Prompt Injection, SQL Injection, Command Execution, Credential Extraction, Privilege Escalation |
 
 ![Capture](./capture.png)
+
+### Hack The Box - Sherlocks
+
+| Sherlock | Status | Operating System | System |
+|---|---|---|---|
+| PurpleKnight | Completed | Windows | Active Directory, Windows Server |
+| Hollow Service | Completed | Windows | DFIR, Digital Forensics |
+| NTLM Relay | Completed | Windows | Network Forensics, Active Directory |
+| Kerberoasting | Completed | Windows | Active Directory, Windows Server |
