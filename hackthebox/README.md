@@ -26,6 +26,8 @@ Detailed write-ups and technical documentation are published only when the platf
 | Touch | Completed | Windows | Information Disclosure, Default Credentials, Kiosk Escape, MySQL UDF Abuse |
 | TwoMillion | Completed | Linux | Broken Access Control, API Enumeration, JWT Manipulation, Command Injection, Kernel Exploitation |
 | Unclaimed | Completed | Windows | Prompt Injection, SQL Injection, Command Execution, Credential Extraction, Privilege Escalation |
+| RedEye | Completed | Windows | XSLT Injection, Command Injection, Credential Extraction, NTLM Relay, SAML Session Hijacking, ADCS ESC13 Abuse, GPO Poisoning, Pass-the-Hash, Privilege Escalation |
+| DoubleTake | Completed | Linux | Authentication Bypass, Credential Extraction, Password Reuse, Container Escape, Privilege Escalation |
 
 ![Capture](./capture.png)
 
