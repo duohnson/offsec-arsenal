@@ -28,8 +28,7 @@ Detailed write-ups and technical documentation are published only when the platf
 | Unclaimed | Completed | Windows | Prompt Injection, SQL Injection, Command Execution, Credential Extraction, Privilege Escalation |
 | RedEye | Completed | Windows | XSLT Injection, Command Injection, Credential Extraction, NTLM Relay, SAML Session Hijacking, ADCS ESC13 Abuse, GPO Poisoning, Pass-the-Hash, Privilege Escalation |
 | DoubleTake | Completed | Linux | Authentication Bypass, Credential Extraction, Password Reuse, Container Escape, Privilege Escalation |
-
-![Capture](./capture.png)
+| Paperwork | Completed | Linux | Command Injection, Path Traversal, File Descriptor Leak, Privilege Escalation |
 
 ### Hack The Box - Sherlocks
 
