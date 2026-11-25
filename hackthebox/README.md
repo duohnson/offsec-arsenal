@@ -29,6 +29,7 @@ Detailed write-ups and technical documentation are published only when the platf
 | RedEye | Completed | Windows | XSLT Injection, Command Injection, Credential Extraction, NTLM Relay, SAML Session Hijacking, ADCS ESC13 Abuse, GPO Poisoning, Pass-the-Hash, Privilege Escalation |
 | DoubleTake | Completed | Linux | Authentication Bypass, Credential Extraction, Password Reuse, Container Escape, Privilege Escalation |
 | Paperwork | Completed | Linux | Command Injection, Path Traversal, File Descriptor Leak, Privilege Escalation |
+| Connected | Completed | Linux | Authentication Bypass, SQL Injection, Remote Code Execution (RCE), Privilege Escalation |
 
 ### Hack The Box - Sherlocks
 
