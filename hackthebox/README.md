@@ -30,6 +30,9 @@ Detailed write-ups and technical documentation are published only when the platf
 | DoubleTake | Completed | Linux | Authentication Bypass, Credential Extraction, Password Reuse, Container Escape, Privilege Escalation |
 | Paperwork | Completed | Linux | Command Injection, Path Traversal, File Descriptor Leak, Privilege Escalation |
 | Connected | Completed | Linux | Authentication Bypass, SQL Injection, Remote Code Execution (RCE), Privilege Escalation |
+| Takeoff | Completed | Linux | SSTI, Local File Inclusion (LFI), HMAC Forgery, Remote Code Execution (RCE), Container Escape, SUID Abuse |
+| Scaffold | Completed | Windows | Stored XXE, Active Directory ACL Abuse, DCOM, AD CS ESC1, PKINIT, DCSync |
+| Handler | Completed | Windows | DPAPI Credential Extraction, Kerberos, MSSQL Linked Server Abuse, Rogue LDAP Credential Capture, Pass-the-Key |
 
 ### Hack The Box - Sherlocks
 
